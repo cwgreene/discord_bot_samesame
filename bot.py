@@ -12,7 +12,9 @@ BOT_TOKEN = supersecret.getSecret('discord_bot_samesame', 'bot_token')
 class MyClient(commands.Bot):
     async def on_ready(self):
         print('Logged on as {0}!'.format(self.user))
-client = MyClient("!", description="Enhance strings")
+client = MyClient("!",
+    description="Enhance strings",
+    help_command=commands.DefaultHelpCommand())
 
 @client.command(name='samesame', help="enhance string")
 async def samesame_cmd(ctx):
